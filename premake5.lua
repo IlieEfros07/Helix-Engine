@@ -49,7 +49,8 @@ project "Helix"
         "opengl32.lib",
         "gdi32.lib",
         "user32.lib",
-        "kernel32.lib"
+        "kernel32.lib",
+
     }
     filter "system:windows"
         buildoptions { "/utf-8" }
@@ -70,16 +71,18 @@ postbuildcommands {
 
     filter "configurations:Debug"
         defines "HX_DEBUG"
-
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "HX_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
 
     filter "configurations:Dist"
         defines "HX_DIST"
+        buildoptions "/MDd"
         optimize "On"
 
 
@@ -117,20 +120,21 @@ project "Sandbox"
 
         defines{
                 "HX_PLATFOM_WINDOWS"
-
-    
         }
 
 
     filter "configurations:Debug"
         defines "HX_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "HX_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
 
     filter "configurations:Dist"
         defines "HX_DIST"
+        buildoptions "/MDd"
         optimize "On"

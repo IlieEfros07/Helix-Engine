@@ -84,7 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -112,7 +112,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -141,7 +141,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -166,6 +166,8 @@
     <ClInclude Include="src\Helix\Events\Event.h" />
     <ClInclude Include="src\Helix\Events\KeyEvent.h" />
     <ClInclude Include="src\Helix\Events\MouseEvent.h" />
+    <ClInclude Include="src\Helix\Layer.h" />
+    <ClInclude Include="src\Helix\LayerStack.h" />
     <ClInclude Include="src\Helix\Log.h" />
     <ClInclude Include="src\Helix\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Helix\Window.h" />
@@ -173,6 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Helix\Application.cpp" />
+    <ClCompile Include="src\Helix\Layer.cpp" />
+    <ClCompile Include="src\Helix\LayerStack.cpp" />
     <ClCompile Include="src\Helix\Log.cpp" />
     <ClCompile Include="src\Helix\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\hxpch.cpp">

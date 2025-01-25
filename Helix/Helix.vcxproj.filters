@@ -37,6 +37,12 @@
     <ClInclude Include="src\Helix\Events\MouseEvent.h">
       <Filter>Helix\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Helix\Layer.h">
+      <Filter>Helix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\LayerStack.h">
+      <Filter>Helix</Filter>
+    </ClInclude>
     <ClInclude Include="src\Helix\Log.h">
       <Filter>Helix</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Helix\Application.cpp">
+      <Filter>Helix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Helix\Layer.cpp">
+      <Filter>Helix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Helix\LayerStack.cpp">
       <Filter>Helix</Filter>
     </ClCompile>
     <ClCompile Include="src\Helix\Log.cpp">

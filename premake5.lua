@@ -11,8 +11,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir={}
 IncludeDir["GLFW"] = "Helix/vendor/GLFW/include"
+IncludeDir["Glad"] = "Helix/vendor/Glad/include"
 
 include "Helix/vendor/GLFW"
+include "Helix/vendor/Glad"
+
 
 project "Helix"
     location "Helix"
@@ -35,7 +38,8 @@ project "Helix"
         "%{prj.name}/vendor/spdlog/include",
         "%{prj.name}/vendor/spdlog/include/fmt",
         "%{prj.name}/vendor/GLFW/deps",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
 
@@ -46,6 +50,7 @@ project "Helix"
     
     links {
         "GLFW", 
+        "Glad",
         "opengl32.lib",
         "gdi32.lib",
         "user32.lib",
@@ -60,7 +65,8 @@ project "Helix"
 
         defines{
                 "HX_PLATFOM_WINDOWS",
-                "HX_BUILD_DLL"
+                "HX_BUILD_DLL",
+                "GLFW_INCLUDE_NONE"
     
         }
 

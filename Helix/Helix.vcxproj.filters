@@ -1,36 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Helix">
+      <UniqueIdentifier>{1F204F0D-8B34-77BE-54B6-1A1EC08973EF}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Helix\Events">
+      <UniqueIdentifier>{239379C0-0FF6-0865-B87B-411BA4BDD4E7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Helix\Platform">
+      <UniqueIdentifier>{53EF48E1-3FBD-3CE7-2851-AD0D14BE184C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helix\Platform\Windows">
+      <UniqueIdentifier>{8D3C2E21-7936-5773-62A3-ED834E3CBDDF}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Helix\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Helix.h" />
     <ClInclude Include="src\Helix\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>Helix</Filter>
     </ClInclude>
-    <ClInclude Include="src\Helix.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Helix\Core.h">
+      <Filter>Helix</Filter>
     </ClInclude>
     <ClInclude Include="src\Helix\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Helix</Filter>
     </ClInclude>
+    <ClInclude Include="src\Helix\Events\ApplicationEvent.h">
+      <Filter>Helix\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\Events\Event.h">
+      <Filter>Helix\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\Events\KeyEvent.h">
+      <Filter>Helix\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\Events\MouseEvent.h">
+      <Filter>Helix\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\Log.h">
+      <Filter>Helix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\Platform\Windows\WindowsWindow.h">
+      <Filter>Helix\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\Window.h">
+      <Filter>Helix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hxpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Helix\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Helix</Filter>
     </ClCompile>
+    <ClCompile Include="src\Helix\Log.cpp">
+      <Filter>Helix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Helix\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Helix\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hxpch.cpp" />
   </ItemGroup>
 </Project>

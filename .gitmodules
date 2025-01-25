@@ -1,0 +1,6 @@
+[submodule "Helix/vendor/spdlog"]
+	path = Helix/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Helix/vendor/GLFW"]
+	path = Helix/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

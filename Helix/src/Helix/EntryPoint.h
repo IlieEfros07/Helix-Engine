@@ -5,7 +5,13 @@
 extern Helix::Application* Helix::CreateApplication();
 
 int main(int argc,char** argv) {
-	printf("Zdarova");
+
+	Helix::Log::Init();
+	HX_CORE_WARN("Initialized Log!");
+	int a = 5;
+	HX_INFO("Hello! Var={0} ",a);
+
+
 	auto app = Helix::CreateApplication();
 	app->Run();
 	delete app;

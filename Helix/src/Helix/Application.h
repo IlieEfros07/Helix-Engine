@@ -1,6 +1,13 @@
 #pragma once
-#include"Core.h"
-namespace Helix{
+
+#include "Core.h"
+#include "Events/Event.h"
+#include "Helix/Events/ApplicationEvent.h"
+
+#include "Window.h"
+
+namespace Helix {
+
 	class HELIX_API Application
 	{
 	public:
@@ -8,7 +15,16 @@ namespace Helix{
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(Event& e);
+	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
-	//To be defind in a client
+
+	// To be defined in CLIENT
 	Application* CreateApplication();
+
 }

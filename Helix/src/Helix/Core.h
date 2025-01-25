@@ -10,3 +10,14 @@
 #else
 	#error Helix only support Windows!
 #endif
+
+#ifdef HX_ENABLE_ASSERTS
+	#define HX_ASSERT(x, ...) {if(!(x)) {HX_ERROR("Assertion Failed: {0}",__VA_ARGS__); __debugbreak(); } }
+	#define HX_CORE_ASSERT(x, ...){if(!(x)){HX_CORE_ERROR("Assertion Failed: {0}",__VA_ARGS__); __debugbreak();}}
+#else
+	#define HX_ASSERT(x,...)
+	#define HX_CORE_ASSERT(x,...)
+#endif
+
+
+#define BIT(x) (1<<x)

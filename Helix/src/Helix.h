@@ -6,6 +6,9 @@
 #include "Helix/Application.h"
 #include "Helix/Layer.h"
 #include "Helix/Log.h"
+#include "Helix/Input.h"
+#include "Helix/MouseButtonCodes.h"
+#include "helix/KeyCodes.h"
 #include "Helix/ImGui/ImGuiLayer.h"
 
 // --Entry Point

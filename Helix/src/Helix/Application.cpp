@@ -1,9 +1,9 @@
 #include "hxpch.h"
 #include "Application.h"
 
-
 #include <Glad/glad.h>
 
+#include "Input.h"
 
 namespace Helix {
 
@@ -62,7 +62,10 @@ namespace Helix {
 
             for (Layer* layer : m_LayerStack) layer->OnUpdate();
             
+            
+
             m_Window->OnUpdate();
+
         }
     }
 

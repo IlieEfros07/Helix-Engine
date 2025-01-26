@@ -1,5 +1,6 @@
 workspace "Helix"
     architecture "x64"
+    startproject "Sandbox"
 
     configurations{
         "Debug",
@@ -9,6 +10,7 @@ workspace "Helix"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+
 IncludeDir={}
 IncludeDir["GLFW"] = "Helix/vendor/GLFW/include"
 IncludeDir["Glad"] = "Helix/vendor/Glad/include"
@@ -16,13 +18,19 @@ IncludeDir["imgui"] = "Helix/vendor/imgui"
 include "Helix/vendor/GLFW"
 include "Helix/vendor/Glad"
 include "Helix/vendor/imgui"
-
+group "Dependencies"
+	include "Helix/vendor/GLFW"
+	include "Helix/vendor/Glad"
+	include "Helix/vendor/imgui"
+group ""
 
 
 project "Helix"
     location "Helix"
     kind "SharedLib"
     language "C++"
+    staticruntime "off"
+
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -79,20 +87,18 @@ postbuildcommands {
 }
 
     filter "configurations:Debug"
-        defines "HX_DEBUG"
-        buildoptions "/MDd"
+        runtime "Debug"
         symbols "On"
-
+        buildoptions { "/MDd" }
     filter "configurations:Release"
-        defines "HX_RELEASE"
-        buildoptions "/MD"
+        runtime "Release"
         optimize "On"
-
+        buildoptions { "/MD" }
 
     filter "configurations:Dist"
-        defines "HX_DIST"
-        buildoptions "/MDd"
+        runtime "Release" 
         optimize "On"
+        buildoptions { "/MD" }
 
 
 
@@ -103,6 +109,7 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
+    staticruntime "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -133,17 +140,16 @@ project "Sandbox"
 
 
     filter "configurations:Debug"
-        defines "HX_DEBUG"
-        buildoptions "/MDd"
+        runtime "Debug"
         symbols "On"
+        buildoptions { "/MDd" }
 
     filter "configurations:Release"
-        defines "HX_RELEASE"
-        buildoptions "/MD"
+        runtime "Release"
         optimize "On"
-
+        buildoptions { "/MD" }
 
     filter "configurations:Dist"
-        defines "HX_DIST"
-        buildoptions "/MDd"
+        runtime "Release" 
         optimize "On"
+        buildoptions { "/MD" }

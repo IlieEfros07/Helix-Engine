@@ -12,9 +12,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir={}
 IncludeDir["GLFW"] = "Helix/vendor/GLFW/include"
 IncludeDir["Glad"] = "Helix/vendor/Glad/include"
-
+IncludeDir["imgui"] = "Helix/vendor/imgui"
 include "Helix/vendor/GLFW"
 include "Helix/vendor/Glad"
+include "Helix/vendor/imgui"
+
 
 
 project "Helix"
@@ -37,9 +39,9 @@ project "Helix"
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
         "%{prj.name}/vendor/spdlog/include/fmt",
-        "%{prj.name}/vendor/GLFW/deps",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.Glad}"
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.imgui}"
     }
 
 
@@ -51,6 +53,7 @@ project "Helix"
     links {
         "GLFW", 
         "Glad",
+        "imgui",
         "opengl32.lib",
         "gdi32.lib",
         "user32.lib",

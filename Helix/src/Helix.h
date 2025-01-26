@@ -6,6 +6,7 @@
 #include "Helix/Application.h"
 #include "Helix/Layer.h"
 #include "Helix/Log.h"
+#include "Helix/ImGui/ImGuiLayer.h"
 
 // --Entry Point
 #include "Helix/EntryPoint.h"

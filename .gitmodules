@@ -4,3 +4,6 @@
 [submodule "Helix/vendor/GLFW"]
 	path = Helix/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Helix/vendor/imgui"]
+	path = Helix/vendor/imgui
+	url = https://github.com/TheCherno/imgui

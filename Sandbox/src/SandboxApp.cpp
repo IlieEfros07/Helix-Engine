@@ -21,6 +21,7 @@ class Sandbox : public Helix::Application {
 public:
 	Sandbox(){
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Helix::ImGuiLayer());
 	}
 	~Sandbox() {
 

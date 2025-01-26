@@ -7,8 +7,14 @@
     <Filter Include="Helix\Events">
       <UniqueIdentifier>{239379C0-0FF6-0865-B87B-411BA4BDD4E7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Helix\ImGui">
+      <UniqueIdentifier>{89F07C99-F5A5-F58E-7E9A-EF65EA4EEC92}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Helix\Platform">
       <UniqueIdentifier>{53EF48E1-3FBD-3CE7-2851-AD0D14BE184C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helix\Platform\OpenGL">
+      <UniqueIdentifier>{27BDBA91-9329-768C-5C1D-0EEAC84898F4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Helix\Platform\Windows">
       <UniqueIdentifier>{8D3C2E21-7936-5773-62A3-ED834E3CBDDF}</UniqueIdentifier>
@@ -37,6 +43,9 @@
     <ClInclude Include="src\Helix\Events\MouseEvent.h">
       <Filter>Helix\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Helix\ImGui\ImGuiLayer.h">
+      <Filter>Helix\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Helix\Layer.h">
       <Filter>Helix</Filter>
     </ClInclude>
@@ -45,6 +54,9 @@
     </ClInclude>
     <ClInclude Include="src\Helix\Log.h">
       <Filter>Helix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helix\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Helix\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Helix\Platform\Windows\WindowsWindow.h">
       <Filter>Helix\Platform\Windows</Filter>
@@ -58,6 +70,9 @@
     <ClCompile Include="src\Helix\Application.cpp">
       <Filter>Helix</Filter>
     </ClCompile>
+    <ClCompile Include="src\Helix\ImGui\ImGuiLayer.cpp">
+      <Filter>Helix\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Helix\Layer.cpp">
       <Filter>Helix</Filter>
     </ClCompile>
@@ -66,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="src\Helix\Log.cpp">
       <Filter>Helix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Helix\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Helix\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Helix\Platform\Windows\WindowsWindow.cpp">
       <Filter>Helix\Platform\Windows</Filter>

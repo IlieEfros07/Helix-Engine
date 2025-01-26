@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>hxpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HX_PLATFOM_WINDOWS;HX_BUILD_DLL;GLFW_INCLUDE_NONE;HX_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\spdlog\include\fmt;vendor\GLFW\deps;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\spdlog\include\fmt;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -105,7 +105,7 @@
       <PrecompiledHeaderFile>hxpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HX_PLATFOM_WINDOWS;HX_BUILD_DLL;GLFW_INCLUDE_NONE;HX_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\spdlog\include\fmt;vendor\GLFW\deps;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\spdlog\include\fmt;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -134,7 +134,7 @@
       <PrecompiledHeaderFile>hxpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HX_PLATFOM_WINDOWS;HX_BUILD_DLL;GLFW_INCLUDE_NONE;HX_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\spdlog\include\fmt;vendor\GLFW\deps;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\spdlog\include\fmt;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -166,18 +166,22 @@
     <ClInclude Include="src\Helix\Events\Event.h" />
     <ClInclude Include="src\Helix\Events\KeyEvent.h" />
     <ClInclude Include="src\Helix\Events\MouseEvent.h" />
+    <ClInclude Include="src\Helix\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Helix\Layer.h" />
     <ClInclude Include="src\Helix\LayerStack.h" />
     <ClInclude Include="src\Helix\Log.h" />
+    <ClInclude Include="src\Helix\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Helix\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Helix\Window.h" />
     <ClInclude Include="src\hxpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Helix\Application.cpp" />
+    <ClCompile Include="src\Helix\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Helix\Layer.cpp" />
     <ClCompile Include="src\Helix\LayerStack.cpp" />
     <ClCompile Include="src\Helix\Log.cpp" />
+    <ClCompile Include="src\Helix\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Helix\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\hxpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -189,6 +193,9 @@
     </ProjectReference>
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

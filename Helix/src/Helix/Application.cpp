@@ -5,6 +5,8 @@
 
 #include "Input.h"
 
+#include "glm/glm.hpp"
+
 namespace Helix {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -58,11 +60,7 @@ namespace Helix {
             glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
-
-
             for (Layer* layer : m_LayerStack) layer->OnUpdate();
-            
-            
 
             m_Window->OnUpdate();
 

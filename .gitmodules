@@ -7,3 +7,6 @@
 [submodule "Helix/vendor/imgui"]
 	path = Helix/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Helix/vendor/glm"]
+	path = Helix/vendor/glm
+	url = https://github.com/g-truc/glm

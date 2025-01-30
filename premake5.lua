@@ -32,13 +32,19 @@ include "Helix/vendor/imgui"
 
 project "Helix"
     location "Helix"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
-    staticruntime "off"
+    cppdialect"C++17"
+    staticruntime "on"
 
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    defines{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+
 
     pchheader "hxpch.h"
     pchsource "Helix/src/hxpch.cpp"
@@ -80,8 +86,6 @@ project "Helix"
     }
     filter "system:windows"
         buildoptions { "/utf-8" }
-        cppdialect "C++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines{
@@ -92,23 +96,23 @@ project "Helix"
         }
 
 
-postbuildcommands {
-("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/")
-}
+
 
     filter "configurations:Debug"
+        defines "HX_DEBUG"
         runtime "Debug"
-        symbols "On"
-        buildoptions { "/MDd" }
+        symbols "on"
+
     filter "configurations:Release"
+      defines "HX_RELEASE"
         runtime "Release"
-        optimize "On"
-        buildoptions { "/MD" }
+        optimize "on"
 
     filter "configurations:Dist"
+        defines "HX_DIST"
         runtime "Release" 
-        optimize "On"
-        buildoptions { "/MD" }
+        optimize "on"
+
 
 
 
@@ -119,7 +123,8 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
-    staticruntime "off"
+    cppdialect "C++17"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -132,6 +137,7 @@ project "Sandbox"
     includedirs{
         "Helix/vendor/spdlog/include",
         "Helix/src",
+        "Helix/vendor/imgui",
         "%{IncludeDir.glm}"
 
     }
@@ -142,8 +148,6 @@ project "Sandbox"
 
     filter "system:windows"
         buildoptions { "/utf-8" }
-        cppdialect "C++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines{
@@ -152,16 +156,16 @@ project "Sandbox"
 
 
     filter "configurations:Debug"
+        defines "HX_DEBUG"
         runtime "Debug"
-        symbols "On"
-        buildoptions { "/MDd" }
+        symbols "on"
 
     filter "configurations:Release"
+      defines "HX_RELEASE"
         runtime "Release"
-        optimize "On"
-        buildoptions { "/MD" }
+        optimize "on"
 
     filter "configurations:Dist"
+        defines "HX_DIST"
         runtime "Release" 
-        optimize "On"
-        buildoptions { "/MD" }
+        optimize "on"

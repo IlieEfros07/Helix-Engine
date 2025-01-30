@@ -7,6 +7,7 @@
 #include "Events/Event.h"
 #include "Helix/Events/ApplicationEvent.h"
 
+#include "Helix/ImGui/ImGuiLayer.h"
 
 
 namespace Helix {
@@ -31,6 +32,9 @@ namespace Helix {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
+
+
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

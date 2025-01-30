@@ -2,11 +2,15 @@
 
 
 #ifdef HX_PLATFOM_WINDOWS
+#if HX_DYNAMIC_LINK
 	#ifdef HX_BUILD_DLL
 		#define HELIX_API __declspec(dllexport)
 	#else
 		#define HELIX_API __declspec(dllimport)
 	#endif
+#else
+	#define HELIX_API	
+#endif
 #else
 	#error Helix only support Windows!
 #endif
